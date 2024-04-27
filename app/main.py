@@ -1,5 +1,10 @@
-import sensor
+from sensor import Sensor
 
-sensor.init()
+
+#Select port for serial connection
+port = input("Enter serial port (a.e. COM5): ")
+#init air dirtiness sensor
+sds011 = Sensor(port)
+#infinite loop for sensor scan and information print
 while True:
-    sensor.print(sensor.get_sensor_data())
+    sds011.print(sds011.get_sensor_data())
